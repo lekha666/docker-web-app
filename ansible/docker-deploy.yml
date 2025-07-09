@@ -1,0 +1,9 @@
+---
+- hosts: webservers
+  tasks:
+    - name: Pull latest docker image and run container
+      docker_container:
+        name: webapp
+        image: lekha24/docker-web-app:latest
+        state: started
+        restart_policy: always
